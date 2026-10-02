@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RiderVault - mockup</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>RiderVault</h1>
+    <p>Platformă magazin echipament moto: stocuri și stiluri de mers.</p>
+    <p class="app-count">3 produse, dintre care 2 active</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Adaugă produs</h2>
+      <form class="item-form">
+        <label>
+          Denumire produs
+          <input type="text" name="titlu" placeholder="Ex: Cască Shoei GT-Air 3" required />
+        </label>
+        <label>
+          Stil de mers
+          <select name="eticheta">
+            <option value="sport">Sport</option>
+            <option value="touring" selected>Touring</option>
+            <option value="urban">Urban</option>
+          </select>
+        </label>
+        <button type="submit">Adaugă</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Produse în magazin</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există niciun element.</p> -->
+      <ul class="item-list">
+        <li class="item-card">
+          <div>
+            <h3>Cască Shoei GT-Air 3</h3>
+            <span class="badge badge-touring">Touring</span>
+          </div>
+          <span class="status">În stoc</span>
+        </li>
+
+        <li class="item-card done">
+          <div>
+            <h3>Geacă piele Dainese Racing</h3>
+            <span class="badge badge-sport">Sport</span>
+          </div>
+          <span class="status">Epuizat</span>
+        </li>
+
+        <li class="item-card">
+          <div>
+            <h3>Mănuși impermeabile Revit</h3>
+            <span class="badge badge-urban">Urban</span>
+          </div>
+          <span class="status">În stoc</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    Proiect Tehnologii Web
+  </footer>
+</body>
+</html>
