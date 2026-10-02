@@ -42,7 +42,7 @@ Open `index.html` in a browser. No build step, no server.
 | S1-R2 | AI usage section                                    | [README.md](https://github.com/RealFace-24/RiderVault/blob/41b9e09/README.md) | read             |
 | S1-R3 | AI log for stage 1                                  | [ai-log/etapa-01.md](https://github.com/RealFace-24/RiderVault/blob/41b9e09/ai-log/etapa-01.md) | read             |
 | S1-R4 | header, form (text + select), 3 cards with own data | [index.html#L10-L65](https://github.com/RealFace-24/RiderVault/blob/41b9e09/index.html#L10-L65) | open the page    |
-| S1-R5 | finished card looks different                       | [css/style.css#L144-L147](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L144-L147) | look at the card |
-| S1-R6 | 2 columns on desktop, 1 under 700px                 | [css/style.css#L161-L165](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L161-L165) | resize < 700px   |
-| S1-R7 | visible focus, readable dark theme                  | [css/style.css#L155-L182](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L155-L182) | Tab; dark mode   |
+| S1-R5 | finished card looks different                       | [css/style.css#L174-L178](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L174-L178) | look at the card |
+| S1-R6 | 2 columns on desktop, 1 under 700px                 | [css/style.css#L194-L199](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L194-L199) | resize < 700px   |
+| S1-R7 | visible focus, readable dark theme                  | [css/style.css#L188-L217](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L188-L217) | Tab; dark mode   |
 | S1-R8 | commit "Stage 1" pushed                             | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/41b9e09) | commit history   |
