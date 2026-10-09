@@ -29,12 +29,12 @@ Open `index.html` in a browser. No build step, no server.
 
 ## Status
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
 
 ---
 
 ## Stage 1 Checklist
-*(Tabelul de completat după primul `git push`, conform ghidului)*
 
 | ID    | Requirement                                         | Where (permalink)                       | How to check     |
 | :---- | :-------------------------------------------------- | :-------------------------------------- | :--------------- |
@@ -46,3 +46,9 @@ Open `index.html` in a browser. No build step, no server.
 | S1-R6 | 2 columns on desktop, 1 under 700px                 | [css/style.css#L194-L199](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L194-L199) | resize < 700px   |
 | S1-R7 | visible focus, readable dark theme                  | [css/style.css#L188-L217](https://github.com/RealFace-24/RiderVault/blob/41b9e09/css/style.css#L188-L217) | Tab; dark mode   |
 | S1-R8 | commit "Stage 1" pushed                             | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/41b9e09) | commit history   |
+
+---
+
+## Stage 2: data logic
+Plain JavaScript, no DOM. `echipamente.js` holds the array and the functions that read and change it. Results are printed in the browser console (F12).
+
