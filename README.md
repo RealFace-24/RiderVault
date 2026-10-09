@@ -52,3 +52,16 @@ Open `index.html` in a browser. No build step, no server.
 ## Stage 2: data logic
 Plain JavaScript, no DOM. `echipamente.js` holds the array and the functions that read and change it. Results are printed in the browser console (F12).
 
+---
+
+## Stage 2 Checklist
+
+| ID    | Requirement                                    | Where (permalink)                               | How to check           |
+| :---- | :--------------------------------------------- | :---------------------------------------------- | :--------------------- |
+| S2-R1 | JS file linked, logs on page load              | [index.html#L9](https://github.com/RealFace-24/RiderVault/blob/07222c5/index.html#L9) | open page, F12         |
+| S2-R2 | 3+ items with id, name, state, tag             | [echipamente.js#L1-L5](https://github.com/RealFace-24/RiderVault/blob/07222c5/echipamente.js#L1-L5) | read                   |
+| S2-R3 | list, count, search, add, toggle, delete       | [echipamente.js#L9-L55](https://github.com/RealFace-24/RiderVault/blob/07222c5/echipamente.js#L9-L55) | console output         |
+| S2-R4 | add rejects empty name and invalid tag         | [echipamente.js#L29-L37](https://github.com/RealFace-24/RiderVault/blob/07222c5/echipamente.js#L29-L37) | last 2 console lines   |
+| S2-R5 | original array unchanged after add             | [echipamente.js#L65](https://github.com/RealFace-24/RiderVault/blob/07222c5/echipamente.js#L65) | console line           |
+| S2-R6 | README Stage 2 section + AI log                | [README.md](https://github.com/RealFace-24/RiderVault/blob/07222c5/README.md), [ai-log/etapa-02.md](https://github.com/RealFace-24/RiderVault/blob/07222c5/ai-log/etapa-02.md) | read                   |
+| S2-R7 | commit "Stage 2" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/07222c5) | commit history         |
