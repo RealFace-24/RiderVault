@@ -25,7 +25,7 @@ Sample data used across all stages:
 Details per stage: see the `ai-log/` folder.
 
 ## How to run
-```bash
+
 cd frontend
 npm install
 npm run dev
