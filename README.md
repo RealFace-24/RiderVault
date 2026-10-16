@@ -25,12 +25,15 @@ Sample data used across all stages:
 Details per stage: see the `ai-log/` folder.
 
 ## How to run
-Open `index.html` in a browser. No build step, no server.
+```bash
+cd frontend
+npm install
+npm run dev
 
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
-- [ ] Stage 3: Vite and React project
+- [x] Stage 3: Vite and React project
 
 ---
 
@@ -65,3 +68,10 @@ Plain JavaScript, no DOM. `echipamente.js` holds the array and the functions tha
 | S2-R5 | original array unchanged after add             | [echipamente.js#L65](https://github.com/RealFace-24/RiderVault/blob/07222c5/echipamente.js#L65) | console line           |
 | S2-R6 | README Stage 2 section + AI log                | [README.md](https://github.com/RealFace-24/RiderVault/blob/07222c5/README.md), [ai-log/etapa-02.md](https://github.com/RealFace-24/RiderVault/blob/07222c5/ai-log/etapa-02.md) | read                   |
 | S2-R7 | commit "Stage 2" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/07222c5) | commit history         |
+
+
+## Stage 3: Vite and React project
+The app now lives in `frontend/`, built with Vite. The data from stage 2 moved into the main component; the list is still printed raw.
+
+
+
