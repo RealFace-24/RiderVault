@@ -48,13 +48,13 @@ body {
   opacity: 0.9;
 }
 
-/* Container principal (Grid 1fr 2fr) */
 .container {
   max-width: 1000px;
-  margin: 24px auto;
+  margin: 24px auto; /* 'auto' stânga-dreapta este cel care centrează elementul pe ecran */
   padding: 0 16px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  /* Etapa 3/4: doar panoul cu date; a doua coloană revine în Etapa 7 */
+  grid-template-columns: 1fr;
   gap: 24px;
   align-items: start;
 }
