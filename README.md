@@ -97,5 +97,16 @@ The list is rendered from the data, through two components:
 `EchipamentCard` receives a single item through props and displays it.
 
 
+## Stage 4 Checklist
+
+| ID    | Requirement                                    | Where (permalink)                               | How to check           |
+| :---- | :--------------------------------------------- | :---------------------------------------------- | :--------------------- |
+| S4-R1 | 2+ components in src/components/               | [frontend/src/components/](https://github.com/RealFace-24/RiderVault/tree/2c307b7/frontend/src/components) | open folder            |
+| S4-R2 | card receives data through props               | [frontend/src/components/EchipamentCard.jsx#L3](https://github.com/RealFace-24/RiderVault/blob/2c307b7/frontend/src/components/EchipamentCard.jsx#L3) | read                   |
+| S4-R3 | map + key={id}, no console warnings            | [frontend/src/components/EchipamentList.jsx#L10-L12](https://github.com/RealFace-24/RiderVault/blob/2c307b7/frontend/src/components/EchipamentList.jsx#L10-L12) | F12, Console           |
+| S4-R4 | message for empty list                         | [frontend/src/components/EchipamentList.jsx#L4-L6](https://github.com/RealFace-24/RiderVault/blob/2c307b7/frontend/src/components/EchipamentList.jsx#L4-L6) | set array to []        |
+| S4-R5 | state changes the card look                    | [frontend/src/components/EchipamentCard.jsx#L5](https://github.com/RealFace-24/RiderVault/blob/2c307b7/frontend/src/components/EchipamentCard.jsx#L5) | toggle a done flag     |
+| S4-R6 | README Stage 4 section + AI log                | [README.md](https://github.com/RealFace-24/RiderVault/blob/2c307b7/README.md), [ai-log/etapa-04.md](https://github.com/RealFace-24/RiderVault/blob/2c307b7/ai-log/etapa-04.md) | read                   |
+| S4-R7 | commit "Stage 4" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/2c307b7) | commit history         |
 
 
