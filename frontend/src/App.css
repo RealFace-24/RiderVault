@@ -215,3 +215,69 @@ body {
     --badge-urban: #34d399;
   }
 }
+
+/* Etapa 5: Tema luminoasă implicită, cu comutare pe dark */
+:root:not([data-theme="dark"]) {
+  /* Variabile light */
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent-soft: #eef2ff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] {
+  /* Variabile dark */
+  --bg: #14121d;
+  --card: #1e1b2e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #352f4d;
+  --accent-soft: #2a2342;
+  --shadow: none;
+}
+
+/* Stiluri Etapa 5: checkbox și buton ștergere */
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.task-main input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.btn-danger {
+  border: 1px solid var(--mare, #ef4444);
+  background: transparent;
+  color: var(--mare, #ef4444);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+.btn-danger:hover { background: var(--mare, #ef4444); color: #fff; }
+
+/* Butonul temei */
+.app-header { position: relative; }
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }

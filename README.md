@@ -37,7 +37,8 @@ npm run dev
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
-- [ ] Stage 5: local state and events
+- [x] Stage 5: local state and events
+- [ ] Stage 6: loading data from a mock API
 
 ---
 
@@ -109,4 +110,7 @@ The list is rendered from the data, through two components:
 | S4-R6 | README Stage 4 section + AI log                | [README.md](https://github.com/RealFace-24/RiderVault/blob/2c307b7/README.md), [ai-log/etapa-04.md](https://github.com/RealFace-24/RiderVault/blob/2c307b7/ai-log/etapa-04.md) | read                   |
 | S4-R7 | commit "Stage 4" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/2c307b7) | commit history         |
 
+---
 
+## Stage 5: local state and events
+The list lives in React state. Checking and deleting work from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
