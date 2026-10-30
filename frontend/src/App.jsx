@@ -16,13 +16,11 @@ export default function App() {
     const [tema, setTema] = useState(temaInitiala);
 
     function handleToggle(id) {
-        setEchipamente((prev) =>
-            prev.map((e) => (e.id === id ? { ...e, inStoc: !e.inStoc } : e))
-        );
+        setEchipamente(prev => prev.map(e => e.id === id ? { ...e, inStoc: !e.inStoc } : e));
     }
 
     function handleDelete(id) {
-        setEchipamente((prev) => prev.filter((e) => e.id !== id));
+        setEchipamente(prev => prev.filter(e => e.id !== id));
     }
 
     function handleTema() {
