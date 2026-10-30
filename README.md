@@ -114,3 +114,16 @@ The list is rendered from the data, through two components:
 
 ## Stage 5: local state and events
 The list lives in React state. Checking and deleting work from the page, and the counters in the header follow automatically. A button in the header switches between light and dark mode. Changes are lost on refresh, which is what stage 6 and stage 10 fix.
+
+## Stage 5 Checklist
+
+| ID    | Requirement                                    | Where (permalink)                               | How to check           |
+| :---- | :--------------------------------------------- | :---------------------------------------------- | :--------------------- |
+| S5-R1 | list kept in useState, in App                  | [frontend/src/App.jsx#L15](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L15) | read                   |
+| S5-R2 | toggling changes state and card look           | [frontend/src/App.jsx#L18-L22](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L18-L22), [TaskCard](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/components/EchipamentCard.jsx#L5-L11) | click a checkbox       |
+| S5-R3 | delete removes the item                        | [frontend/src/App.jsx#L24-L26](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L24-L26), [TaskCard](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/components/EchipamentCard.jsx#L19-L26) | click Delete           |
+| S5-R4 | header counter derived, not in state           | [frontend/src/App.jsx#L34](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L34) | toggle, watch header   |
+| S5-R5 | immutable updates (no push, splice, assignment)| [frontend/src/App.jsx#L18-L26](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L18-L26) | read                   |
+| S5-R6 | light/dark toggle: state + data-theme on html  | [frontend/src/App.jsx#L28-L32](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.jsx#L28-L32), [App.css](https://github.com/RealFace-24/RiderVault/blob/77f65db/frontend/src/App.css) | click the button       |
+| S5-R7 | no console warnings; README + AI log           | [README.md](https://github.com/RealFace-24/RiderVault/blob/77f65db/README.md), [ai-log/etapa-05.md](https://github.com/RealFace-24/RiderVault/blob/77f65db/ai-log/etapa-05.md) | F12, Console           |
+| S5-R8 | commit "Stage 5" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/77f65db) | commit history         |
