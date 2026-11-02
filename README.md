@@ -38,7 +38,8 @@ npm run dev
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
-- [ ] Stage 6: loading data from a mock API
+- [x] Stage 6: data from a mock API
+- [ ] Stage 7: form and validation
 
 ---
 
@@ -127,3 +128,17 @@ The list lives in React state. Checking and deleting work from the page, and the
 | S5-R6 | light/dark toggle: state + data-theme on html  | [frontend/src/App.jsx#L26-L30](https://github.com/RealFace-24/RiderVault/blob/2648c95/frontend/src/App.jsx#L26-L30), [App.css#L176-L197](https://github.com/RealFace-24/RiderVault/blob/2648c95/frontend/src/App.css#L176-L197) | click the button       |
 | S5-R7 | no console warnings; README + AI log           | [README.md](https://github.com/RealFace-24/RiderVault/blob/2648c95/README.md), [ai-log/etapa-05.md](https://github.com/RealFace-24/RiderVault/blob/2648c95/ai-log/etapa-05.md) | F12, Console           |
 | S5-R8 | commit "Stage 5" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/2648c95) | commit history         |
+
+---
+
+## Stage 6: data from a mock API
+The list is served by json-server from `db.json`. The app fetches it on load and shows a loading state and an error state.
+
+# terminal 1, npm run api
+http://localhost:3001/echipamente
+
+# terminal 2, npm run dev
+http://localhost:5173
+
+
+
