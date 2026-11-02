@@ -1,0 +1,9 @@
+{
+  "echipamente": [
+    { "id": 1, "denumire": "Cască Shoei GT-Air 3", "inStoc": true, "stil": "touring" },
+    { "id": 2, "denumire": "Geacă piele Dainese Racing", "inStoc": false, "stil": "sport" },
+    { "id": 3, "denumire": "Mănuși impermeabile Revit", "inStoc": true, "stil": "urban" },
+    { "id": 4, "denumire": "Cizme TCX X-Blend", "inStoc": false, "stil": "urban" },
+    { "id": 5, "denumire": "Pantaloni textil Alpinestars", "inStoc": true, "stil": "touring" }
+  ]
+}

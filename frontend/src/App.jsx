@@ -1,19 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EchipamentList from "./components/EchipamentList.jsx";
-
-const ECHIPAMENTE_INITIALE = [
-    { id: 1, denumire: "Cască Shoei GT-Air 3", inStoc: true, stil: "touring" },
-    { id: 2, denumire: "Geacă piele Dainese Racing", inStoc: false, stil: "sport" },
-    { id: 3, denumire: "Mănuși impermeabile Revit", inStoc: true, stil: "urban" }
-];
+import { fetchEchipamente } from "./api.js";
 
 function temaInitiala() {
     return "light";
 }
 
 export default function App() {
-    const [echipamente, setEchipamente] = useState(ECHIPAMENTE_INITIALE);
+    const [echipamente, setEchipamente] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [tema, setTema] = useState(temaInitiala);
+
+    useEffect(() => {
+        let ignore = false;
+        async function load() {
+            try {
+                const data = await fetchEchipamente();
+                if (!ignore) setEchipamente(data);
+            } catch (err) {
+                if (!ignore) setError(err.message);
+            } finally {
+                if (!ignore) setLoading(false);
+            }
+        }
+        load();
+        return () => {
+            ignore = true;
+        };
+    }, []);
 
     function handleToggle(id) {
         setEchipamente(prev => prev.map(e => e.id === id ? { ...e, inStoc: !e.inStoc } : e));
@@ -51,11 +66,22 @@ export default function App() {
             <main className="container">
                 <section className="panel">
                     <h2>Produse în magazin</h2>
-                    <EchipamentList
-                        echipamente={echipamente}
-                        onToggle={handleToggle}
-                        onDelete={handleDelete}
-                    />
+
+                    {loading && <p className="info">Se încarcă lista de echipamente...</p>}
+
+                    {error && (
+                        <p className="error">
+                            Nu am putut încărca datele: {error}. Rulează <code>npm run api</code>?
+                        </p>
+                    )}
+
+                    {!loading && !error && (
+                        <EchipamentList
+                            echipamente={echipamente}
+                            onToggle={handleToggle}
+                            onDelete={handleDelete}
+                        />
+                    )}
                 </section>
             </main>
         </>
