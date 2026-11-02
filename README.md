@@ -134,10 +134,10 @@ The list lives in React state. Checking and deleting work from the page, and the
 ## Stage 6: data from a mock API
 The list is served by json-server from `db.json`. The app fetches it on load and shows a loading state and an error state.
 
-# terminal 1, npm run api
+**terminal 1, npm run api**
 http://localhost:3001/echipamente
 
-# terminal 2, npm run dev
+**terminal 2, npm run dev**
 http://localhost:5173
 
 ## Stage 6 Checklist
