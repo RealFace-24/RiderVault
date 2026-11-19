@@ -155,3 +155,17 @@ http://localhost:5173
 
 ## Stage 7: form and validation
 Products can be added from the page. The form is controlled and validated, and every change (add, toggle, delete) goes to the API before it shows up in the list.
+
+## Stage 7 Checklist
+
+| ID    | Requirement                                                 | Where (permalink) | How to check |
+| :---- | :---------------------------------------------------------- | :---------------- | :----------- |
+| S7-R1 | controlled form: value + onChange on every field            | [EchipamentForm.jsx#L59-L97](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/components/EchipamentForm.jsx#L59-L97) | read |
+| S7-R2 | empty title shows an error, nothing is sent                 | [EchipamentForm.jsx#L18-L29](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/components/EchipamentForm.jsx#L18-L29) | submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh           | [App.jsx#L39-L42](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/App.jsx#L39-L42), [api.js#L23-L28](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/api.js#L23-L28) | add, refresh |
+| S7-R4 | toggle and delete survive refresh                           | [App.jsx#L44-L65](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/App.jsx#L44-L65), [api.js#L30-L41](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/api.js#L30-L41) | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | [EchipamentForm.jsx#L39-L54](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/components/EchipamentForm.jsx#L39-L54), [EchipamentForm.jsx#L105-L107](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/components/EchipamentForm.jsx#L105-L107) | --delay 3000; stop API and submit |
+| S7-R6 | tw.json and the data-testid attributes from table 7.3       | [tw.json](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/tw.json), [EchipamentCard.jsx#L5-L33](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/frontend/src/components/EchipamentCard.jsx#L5-L33) | querySelectorAll in the console |
+| S7-R7 | README Stage 7 section + AI log                             | [README.md](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/README.md), [ai-log/etapa-07.md](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/ai-log/etapa-07.md) | read |
+| S7-R8 | commit "Stage 7" pushed                                     | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/e87f2f3) | commit history |
+
