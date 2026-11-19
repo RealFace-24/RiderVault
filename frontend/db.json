@@ -1,9 +1,25 @@
 {
   "echipamente": [
-    { "id": 1, "denumire": "Cască Shoei GT-Air 3", "inStoc": true, "stil": "touring" },
-    { "id": 2, "denumire": "Geacă piele Dainese Racing", "inStoc": false, "stil": "sport" },
-    { "id": 3, "denumire": "Mănuși impermeabile Revit", "inStoc": true, "stil": "urban" },
-    { "id": 4, "denumire": "Cizme TCX X-Blend", "inStoc": false, "stil": "urban" },
-    { "id": 5, "denumire": "Pantaloni textil Alpinestars", "inStoc": true, "stil": "touring" }
+    {
+      "id": 2,
+      "denumire": "Geacă piele Dainese Racing",
+      "inStoc": false,
+      "stil": "sport",
+      "cantitate": 3
+    },
+    {
+      "id": 4,
+      "denumire": "Cizme TCX X-Blend",
+      "inStoc": true,
+      "stil": "urban",
+      "cantitate": 2
+    },
+    {
+      "denumire": "Casca HJC",
+      "stil": "urban",
+      "cantitate": 5,
+      "inStoc": false,
+      "id": 5
+    }
   ]
 }

@@ -39,7 +39,8 @@ npm run dev
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
-- [ ] Stage 7: form and validation
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page
 
 ---
 
@@ -151,3 +152,6 @@ http://localhost:5173
 | S6-R5 | fetch only in api.js, URL from env             | [api.js#L1-L9](https://github.com/RealFace-24/RiderVault/blob/b1a8c10/frontend/src/api.js#L1-L9), [.env.example](https://github.com/RealFace-24/RiderVault/blob/b1a8c10/frontend/.env.example) | search for fetch       |
 | S6-R6 | README Stage 6 section + AI log                | [README.md](https://github.com/RealFace-24/RiderVault/blob/b1a8c10/README.md), [ai-log/etapa-06.md](https://github.com/RealFace-24/RiderVault/blob/b1a8c10/ai-log/etapa-06.md) | read                   |
 | S6-R7 | commit "Stage 6" pushed                        | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/b1a8c10) | commit history         |
+
+## Stage 7: form and validation
+Products can be added from the page. The form is controlled and validated, and every change (add, toggle, delete) goes to the API before it shows up in the list.

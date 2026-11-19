@@ -1,0 +1,9 @@
+{
+  "resource": "echipamente",
+  "title": "denumire",
+  "done": "inStoc",
+  "sample": {
+    "stil": "sport",
+    "cantitate": 5
+  }
+}

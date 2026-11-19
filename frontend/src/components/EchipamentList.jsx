@@ -2,7 +2,11 @@ import EchipamentCard from "./EchipamentCard.jsx";
 
 export default function EchipamentList({ echipamente, onToggle, onDelete }) {
     if (echipamente.length === 0) {
-        return <p className="empty">Nu există niciun echipament în magazin.</p>;
+        return (
+            <p className="empty" data-testid="empty">
+                Nu există niciun echipament.
+            </p>
+        );
     }
 
     return (
