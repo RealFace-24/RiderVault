@@ -172,3 +172,17 @@ Products can be added from the page. The form is controlled and validated, and e
 
 ## Stage 8: routing and detail page
 Three pages behind React Router: the list, a detail page at `/echipamente/:id`, and an about page, plus a 404 page. Component styles moved to CSS Modules.
+
+## Stage 8 Checklist
+
+| ID    | Requirement                                                            | Where (permalink) | How to check |
+| :---- | :--------------------------------------------------------------------- | :---------------- | :----------- |
+| S8-R1 | header navigation changes page without reload                          | [App.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/App.jsx), [Layout.jsx#L33-L40](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/Layout.jsx#L33-L40) | click links, watch Network |
+| S8-R2 | click on an item opens its detail page                                 | [EchipamentCard.jsx#L21-L27](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/EchipamentCard.jsx#L21-L27), [EchipamentDetaliuPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/EchipamentDetaliuPage.jsx) | click a title |
+| S8-R3 | refresh on the detail URL works; missing id shows an error             | [EchipamentDetaliuPage.jsx#L13-L50](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/EchipamentDetaliuPage.jsx#L13-L50) | refresh /echipamente/1, open /echipamente/999 |
+| S8-R4 | unknown URL shows the app 404 page                                     | [App.jsx#L15](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/App.jsx#L15), [NotFoundPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/NotFoundPage.jsx) | open /ceva |
+| S8-R5 | each component has its .module.css; index.css only shared styles       | [src/components](https://github.com/RealFace-24/RiderVault/tree/5224cda/frontend/src/components), [src/pages](https://github.com/RealFace-24/RiderVault/tree/5224cda/frontend/src/pages), [index.css](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/index.css) | read |
+| S8-R6 | data-testid attributes from tables 7.3 and 8.2; detail route /<resource>/:id | [Layout.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/Layout.jsx), [EchipamentCard.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/EchipamentCard.jsx), [EchipamentDetaliuPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/EchipamentDetaliuPage.jsx), [NotFoundPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/NotFoundPage.jsx) | querySelector in the console |
+| S8-R7 | README Stage 8 section + AI log                                        | [README.md](https://github.com/RealFace-24/RiderVault/blob/5224cda/README.md), [ai-log/etapa-08.md](https://github.com/RealFace-24/RiderVault/blob/5224cda/ai-log/etapa-08.md) | read |
+| S8-R8 | commit "Stage 8" pushed                                                | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/5224cda) | commit history |
+
