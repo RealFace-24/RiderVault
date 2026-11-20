@@ -39,3 +39,7 @@ export function deleteEchipament(id) {
         method: "DELETE",
     });
 }
+
+export function fetchEchipament(id) {
+    return request(`/echipamente/${id}`);
+}

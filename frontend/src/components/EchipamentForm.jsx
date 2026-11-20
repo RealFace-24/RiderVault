@@ -1,10 +1,6 @@
 import { useState } from "react";
-
-const STILURI = [
-    { value: "touring", label: "Touring" },
-    { value: "sport", label: "Sport" },
-    { value: "urban", label: "Urban" },
-];
+import { STILURI } from "../constants.js";
+import styles from "./EchipamentForm.module.css";
 
 const DENUMIRE_MAX = 100;
 
@@ -29,7 +25,7 @@ export default function EchipamentForm({ onAdd }) {
     }
 
     async function handleSubmit(e) {
-        e.preventDefault(); // oprește reîncărcarea paginii
+        e.preventDefault();
         const mesaj = valideaza();
         if (mesaj) {
             setEroare(mesaj);
@@ -55,7 +51,7 @@ export default function EchipamentForm({ onAdd }) {
     }
 
     return (
-        <form className="task-form" onSubmit={handleSubmit} noValidate data-testid="form">
+        <form className={styles.form} onSubmit={handleSubmit} noValidate data-testid="form">
             <label>
                 Denumire echipament
                 <input
@@ -91,7 +87,9 @@ export default function EchipamentForm({ onAdd }) {
                     min="1"
                     value={cantitate}
                     onChange={(e) => setCantitate(e.target.value)}
-                    aria-invalid={Boolean(eroare && (!Number.isInteger(Number(cantitate)) || Number(cantitate) < 1))}
+                    aria-invalid={Boolean(
+                        eroare && (!Number.isInteger(Number(cantitate)) || Number(cantitate) < 1)
+                    )}
                     data-testid="form-cantitate"
                 />
             </label>
@@ -102,7 +100,7 @@ export default function EchipamentForm({ onAdd }) {
                 </p>
             )}
 
-            <button type="submit" disabled={trimite} data-testid="form-submit">
+            <button type="submit" className="btn" disabled={trimite} data-testid="form-submit">
                 {trimite ? "Se salvează..." : "Adaugă produs"}
             </button>
         </form>

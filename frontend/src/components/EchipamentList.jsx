@@ -1,4 +1,5 @@
 import EchipamentCard from "./EchipamentCard.jsx";
+import styles from "./EchipamentList.module.css";
 
 export default function EchipamentList({ echipamente, onToggle, onDelete }) {
     if (echipamente.length === 0) {
@@ -10,7 +11,7 @@ export default function EchipamentList({ echipamente, onToggle, onDelete }) {
     }
 
     return (
-        <ul className="item-list">
+        <ul className={styles.list}>
             {echipamente.map((echipament) => (
                 <EchipamentCard
                     key={echipament.id}

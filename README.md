@@ -40,7 +40,8 @@ npm run dev
 - [x] Stage 5: local state and events
 - [x] Stage 6: data from a mock API
 - [x] Stage 7: form and validation
-- [ ] Stage 8: routing and detail page
+- [x] Stage 8: routing and detail page
+- [ ] Stage 9: own backend with Express
 
 ---
 
@@ -169,3 +170,5 @@ Products can be added from the page. The form is controlled and validated, and e
 | S7-R7 | README Stage 7 section + AI log                             | [README.md](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/README.md), [ai-log/etapa-07.md](https://github.com/RealFace-24/RiderVault/blob/e87f2f3/ai-log/etapa-07.md) | read |
 | S7-R8 | commit "Stage 7" pushed                                     | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/e87f2f3) | commit history |
 
+## Stage 8: routing and detail page
+Three pages behind React Router: the list, a detail page at `/echipamente/:id`, and an about page, plus a 404 page. Component styles moved to CSS Modules.
