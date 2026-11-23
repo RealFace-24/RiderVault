@@ -1,11 +1,11 @@
 import EchipamentCard from "./EchipamentCard.jsx";
 import styles from "./EchipamentList.module.css";
 
-export default function EchipamentList({ echipamente, onToggle, onDelete }) {
+export default function EchipamentList({ echipamente, onToggle, onDelete, onEdit }) {
     if (echipamente.length === 0) {
         return (
             <p className="empty" data-testid="empty">
-                Nu există niciun echipament.
+                No gear found.
             </p>
         );
     }
@@ -18,6 +18,7 @@ export default function EchipamentList({ echipamente, onToggle, onDelete }) {
                     echipament={echipament}
                     onToggle={onToggle}
                     onDelete={onDelete}
+                    onEdit={onEdit}
                 />
             ))}
         </ul>

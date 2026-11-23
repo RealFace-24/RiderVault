@@ -1,26 +1,29 @@
 import { useState } from "react";
-import { STILURI } from "../constants.js";
+import { CATEGORII, STILURI } from "../constants.js";
 import styles from "./EchipamentForm.module.css";
 
 const DENUMIRE_MAX = 100;
 
-export default function EchipamentForm({ onAdd }) {
-    const [denumire, setDenumire] = useState("");
-    const [stil, setStil] = useState("touring");
-    const [cantitate, setCantitate] = useState("5");
+export default function EchipamentForm({ onAdd, initialProduct, onCancel }) {
+    const [denumire, setDenumire] = useState(initialProduct?.denumire ?? "");
+    const [stil, setStil] = useState(initialProduct?.stil ?? "touring");
+    const [cantitate, setCantitate] = useState(String(initialProduct?.cantitate ?? 5));
+    const [categorie, setCategorie] = useState(initialProduct?.categorie ?? "helmets");
+    const [pret, setPret] = useState(String(initialProduct?.pret ?? 199.99));
     const [eroare, setEroare] = useState("");
     const [trimite, setTrimite] = useState(false);
 
     function valideaza() {
         const d = denumire.trim();
-        if (d === "") return "Denumirea produsului este obligatorie.";
+        if (d === "") return "Product name is required.";
         if (d.length > DENUMIRE_MAX) {
-            return `Denumirea are maximum ${DENUMIRE_MAX} de caractere.`;
+            return `Product name must be ${DENUMIRE_MAX} characters or fewer.`;
         }
         const c = Number(cantitate);
         if (!Number.isInteger(c) || c < 1) {
-            return "Cantitatea trebuie să fie un număr întreg pozitiv (cel puțin 1).";
+            return "Quantity must be a positive whole number (at least 1).";
         }
+        if (!Number.isFinite(Number(pret)) || Number(pret) <= 0) return "Enter a valid price greater than zero.";
         return "";
     }
 
@@ -38,11 +41,14 @@ export default function EchipamentForm({ onAdd }) {
                 denumire: denumire.trim(),
                 stil,
                 cantitate: Number(cantitate),
-                inStoc: true,
+                inStoc: initialProduct?.inStoc ?? true,
+                categorie,
+                pret: Number(pret),
             });
             setDenumire("");
             setStil("touring");
             setCantitate("5");
+            setCategorie("helmets"); setPret("199.99");
         } catch (err) {
             setEroare(err.message);
         } finally {
@@ -53,12 +59,12 @@ export default function EchipamentForm({ onAdd }) {
     return (
         <form className={styles.form} onSubmit={handleSubmit} noValidate data-testid="form">
             <label>
-                Denumire echipament
+                Product name
                 <input
                     type="text"
                     value={denumire}
                     onChange={(e) => setDenumire(e.target.value)}
-                    placeholder="Ex: Cască HJC RPHA 12"
+                    placeholder="e.g. HJC RPHA 12 helmet"
                     maxLength={DENUMIRE_MAX}
                     aria-invalid={Boolean(eroare && denumire.trim() === "")}
                     data-testid="form-title"
@@ -66,7 +72,13 @@ export default function EchipamentForm({ onAdd }) {
             </label>
 
             <label>
-                Stil de mers
+                Category
+                <select value={categorie} onChange={(e) => setCategorie(e.target.value)}>
+                    {CATEGORII.map((item) => <option key={item.value} value={item.value}>{item.label}</option>)}
+                </select>
+            </label>
+            <label>
+                Riding style
                 <select
                     value={stil}
                     onChange={(e) => setStil(e.target.value)}
@@ -79,9 +91,10 @@ export default function EchipamentForm({ onAdd }) {
                     ))}
                 </select>
             </label>
+            <label>Price (RON)<input type="number" min="0.01" step="0.01" value={pret} onChange={(e) => setPret(e.target.value)} /></label>
 
             <label>
-                Cantitate (bucăți)
+                Quantity (units)
                 <input
                     type="number"
                     min="1"
@@ -101,8 +114,9 @@ export default function EchipamentForm({ onAdd }) {
             )}
 
             <button type="submit" className="btn" disabled={trimite} data-testid="form-submit">
-                {trimite ? "Se salvează..." : "Adaugă produs"}
+                {trimite ? "Saving..." : initialProduct ? "Save changes" : "Add product"}
             </button>
+            {initialProduct && <button type="button" className="btn-secondary" onClick={onCancel}>Cancel</button>}
         </form>
     );
 }

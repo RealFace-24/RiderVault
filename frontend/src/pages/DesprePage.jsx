@@ -1,14 +1,14 @@
 export default function DesprePage() {
     return (
         <section className="panel">
-            <h2>Despre RiderVault</h2>
+            <h2>About RiderVault</h2>
             <p>
-                RiderVault este o platformă de gestiune pentru un magazin de echipamente
-                moto, construită pas cu pas în cadrul proiectului de Tehnologii Web.
+                RiderVault is a motorcycle gear store and inventory platform, built for
+                riders who want dependable equipment for every kind of journey.
             </p>
             <p>
-                Stack: React, Vite, React Router, CSS Modules, Node.js, Express, MariaDB,
-                Docker.
+                Built with React, Vite, React Router, CSS Modules, Node.js, Express, MariaDB,
+                and Docker.
             </p>
         </section>
     );

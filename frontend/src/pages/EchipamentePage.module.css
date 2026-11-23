@@ -1,18 +1,28 @@
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 24px;
-    align-items: start;
-}
-
-.summary {
-    margin-top: -8px;
-    color: var(--muted);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 700px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
+.hero { position: relative; overflow: hidden; min-height: 330px; padding: 46px 52px 32px; margin-bottom: 42px; color: #f5f2eb; background: radial-gradient(ellipse at 78% 45%, #343a3d 0, #171c20 35%, #090b0d 72%); border: 1px solid #343a3d; border-radius: 2px; }
+.hero:after { content: ""; position: absolute; width: 410px; height: 410px; right: 8%; top: -100px; border: 1px solid #ffffff14; border-radius: 50%; box-shadow: 0 0 0 35px #ffffff08, 0 0 0 75px #ffffff06; }
+.heroCopy { position: relative; z-index: 1; max-width: 550px; }
+.eyebrow { display: block; color: #f2ca05; font-size: .68rem; font-weight: 800; letter-spacing: .19em; }
+.hero h1 { margin: 17px 0 12px; font-size: clamp(2.7rem, 5vw, 4.6rem); line-height: .98; letter-spacing: -.06em; }
+.hero h1 em { color: #f2ca05; font-style: normal; }
+.heroCopy p { max-width: 400px; color: #c2b9b1; }
+.heroCta { display: inline-flex; gap: 22px; margin-top: 9px; padding: 11px 16px; background: #f2ca05; color: #24231f; text-decoration: none; font-weight: 800; font-size: .88rem; }
+.heroMark { position: absolute; z-index: 1; right: 17%; top: 67px; width: 170px; height: 170px; display: grid; place-items: center; border: 1px solid #f2ca0555; border-radius: 50%; color: #f2ca05; transform: rotate(-12deg); }
+.heroMark span { font-size: 4.3rem; font-weight: 900; letter-spacing: -.12em; }
+.heroMark small { position: absolute; right: -34px; bottom: 16px; font-size: .58rem; letter-spacing: .18em; line-height: 1.5; }
+.heroStats { position: relative; z-index: 1; display: flex; gap: 42px; margin-top: 34px; padding-top: 17px; border-top: 1px solid #ffffff25; }
+.heroStats div { display: flex; align-items: baseline; gap: 9px; }
+.heroStats strong { font-size: 1.2rem; color: #f2ca05; }.heroStats span { color: #b6aaa2; font-size: .75rem; }
+.sectionHeading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 0 0 18px; }
+.sectionHeading h2 { margin: 5px 0 0; font-size: 1.8rem; letter-spacing: -.04em; }
+.stockLabel { padding: 7px 11px; border: 1px solid var(--border); color: var(--muted); font-size: .75rem; }.stockLabel i { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; background: #6da77a; }
+.grid { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(0, 1.7fr); gap: 22px; align-items: start; }
+.formPanel { border-top: 2px solid #cf603d !important; }.formPanel h2 { margin: 6px 0 0; font-size: 1.45rem; }.formIntro { margin: 4px 0 20px; color: var(--muted); font-size: .84rem; }
+.catalogPanel { padding-top: 2px; }.summary { margin: 0 0 14px; color: var(--muted); font-size: .83rem; }.summary span { color: #cf603d; }
+.filters { display: grid; grid-template-columns: minmax(160px, 1fr) repeat(4, minmax(115px, .5fr)); gap: 9px; margin-bottom: 16px; }
+.filters label { min-width: 0; }
+.filters input, .filters select { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid var(--border); border-radius: 2px; background: var(--card); color: var(--text); font: inherit; font-size: .82rem; }
+.searchBox { position: relative; display: block; }
+.searchBox > span:not(.visuallyHidden) { position: absolute; left: 11px; top: 6px; color: var(--muted); font-size: 1.35rem; }
+.searchBox input { padding-left: 34px; }
+.visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 700px) { .hero { padding: 32px 24px 24px; }.heroMark { right: -14px; top: 30px; opacity: .28; }.heroStats { gap: 12px; flex-wrap: wrap; }.heroStats div { display: block; }.heroStats strong,.heroStats span { display: block; }.grid { grid-template-columns: 1fr; }.sectionHeading { align-items: start; flex-direction: column; }.filters { grid-template-columns: 1fr 1fr; }.searchBox { grid-column: 1 / -1; } }

@@ -5,17 +5,25 @@
 }
 
 :root {
-    --bg: #f4f5f7;
-    --card: #ffffff;
-    --text: #1f2937;
-    --muted: #6b7280;
-    --accent: #ef4444;
-    --accent-dark: #dc2626;
-    --accent-soft: #fef2f2;
-    --border: #e5e7eb;
-    --touring: #0d9488;
-    --urban: #d97706;
-    --sport: #db2777;
+    --bg: #f2eee8;
+    --card: #fbf9f5;
+    --text: #292724;
+    --muted: #777168;
+    --accent: #bb633f;
+    --accent-dark: #994a30;
+    --accent-soft: #f3e6dc;
+    --border: #ded6cb;
+    --header-bg: #fbfaf7;
+    --header-text: #252421;
+    --header-border: #dedbd3;
+    --promo-bg: #33312e;
+    --promo-text: #f5f1e8;
+    --nav-hover: #eeeae2;
+    --category-bg: #f2ca05;
+    --category-text: #292724;
+    --touring: #49786b;
+    --urban: #a57836;
+    --sport: #9c5140;
     --mare: #dc2626;
     --error-bg: #fef2f2;
     --error-border: #fecaca;
@@ -25,12 +33,20 @@
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --bg: #14121d;
-        --card: #1e1b2e;
-        --text: #e5e7eb;
-        --muted: #9ca3af;
-        --border: #352f4d;
-        --accent-soft: #2c1a24;
+        --bg: #191816;
+        --card: #24221f;
+        --text: #eee9e0;
+        --muted: #aaa398;
+        --border: #403a32;
+        --accent-soft: #382a22;
+        --header-bg: #211f1c;
+        --header-text: #eee9e0;
+        --header-border: #403a32;
+        --promo-bg: #11100f;
+        --promo-text: #e8e1d6;
+        --nav-hover: #35312b;
+        --category-bg: #d4ae00;
+        --category-text: #1e1c18;
         --error-bg: #2a1622;
         --error-border: #4a2437;
         --shadow: none;
@@ -38,12 +54,20 @@
 }
 
 :root[data-theme="dark"] {
-    --bg: #14121d;
-    --card: #1e1b2e;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --border: #352f4d;
-    --accent-soft: #2c1a24;
+    --bg: #191816;
+    --card: #24221f;
+    --text: #eee9e0;
+    --muted: #aaa398;
+    --border: #403a32;
+    --accent-soft: #382a22;
+    --header-bg: #211f1c;
+    --header-text: #eee9e0;
+    --header-border: #403a32;
+    --promo-bg: #11100f;
+    --promo-text: #e8e1d6;
+    --nav-hover: #35312b;
+    --category-bg: #d4ae00;
+    --category-text: #1e1c18;
     --error-bg: #2a1622;
     --error-border: #4a2437;
     --shadow: none;
@@ -51,10 +75,11 @@
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: Inter, "Avenir Next", system-ui, -apple-system, "Segoe UI", sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.5;
+    background-image: radial-gradient(ellipse at 50% -20%, rgba(193, 100, 63, .07), transparent 55%);
 }
 
 a {
@@ -110,6 +135,7 @@ a {
 .btn:hover {
     background: var(--accent-dark);
 }
+.btn-secondary { padding: 9px 13px; border: 1px solid var(--border); background: transparent; color: var(--text); font: inherit; cursor: pointer; }
 
 .btn:disabled {
     opacity: 0.6;

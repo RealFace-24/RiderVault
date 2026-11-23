@@ -7,12 +7,13 @@ function navClass({ isActive }) {
 }
 
 function temaInitiala() {
-    if (document.documentElement.dataset.theme) {
-        return document.documentElement.dataset.theme;
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+    const saved = window.localStorage.getItem("ridervault-theme");
+    const theme = saved === "light" || saved === "dark"
+        ? saved
+        : document.documentElement.dataset.theme
+            || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.dataset.theme = theme;
+    return theme;
 }
 
 export default function Layout() {
@@ -22,20 +23,23 @@ export default function Layout() {
         const noua = tema === "light" ? "dark" : "light";
         setTema(noua);
         document.documentElement.dataset.theme = noua;
+        window.localStorage.setItem("ridervault-theme", noua);
     }
 
     return (
         <>
+            <div className={styles.promoStrip}>FAST SHIPPING · GEAR UP FOR EVERY MILE</div>
             <header className={styles.header}>
                 <div className={styles.inner}>
                     <span className={styles.logo}>RiderVault</span>
+                    <span className={styles.tagline}>GEAR UP. RIDE OUT.</span>
                     <div className={styles.actions}>
                         <nav className={styles.nav} data-testid="nav">
                             <NavLink to="/" end className={navClass}>
-                                Echipamente
+                                Gear
                             </NavLink>
                             <NavLink to="/despre" className={navClass}>
-                                Despre
+                                About
                             </NavLink>
                         </nav>
                         <button
@@ -44,18 +48,21 @@ export default function Layout() {
                             onClick={handleTema}
                             aria-pressed={tema === "dark"}
                         >
-                            {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
+                            {tema === "dark" ? "Light mode" : "Dark mode"}
                         </button>
                     </div>
                 </div>
             </header>
+            <div className={styles.categoryBar} aria-label="Categorii echipamente">
+                <div className={styles.categoryInner}><a href="/#catalog">HELMETS</a><a href="/#catalog">JACKETS</a><a href="/#catalog">GLOVES</a><a href="/#catalog">BOOTS</a><a href="/#catalog">PROTECTION</a></div>
+            </div>
 
             <main className={styles.main}>
                 <Outlet />
             </main>
 
             <footer className={styles.footer}>
-                RiderVault — Proiect Tehnologii Web
+                RiderVault — Motorcycle gear for every ride
             </footer>
         </>
     );

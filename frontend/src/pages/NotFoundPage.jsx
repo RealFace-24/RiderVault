@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function NotFoundPage() {
     return (
         <section className="panel" data-testid="not-found">
-            <h2>Pagina nu există</h2>
-            <p className="info">Adresa cerută nu duce nicăieri.</p>
-            <Link to="/">Înapoi la echipamente</Link>
+            <h2>Page not found</h2>
+            <p className="info">We couldn't find the page you were looking for.</p>
+            <Link to="/">Back to gear</Link>
         </section>
     );
 }

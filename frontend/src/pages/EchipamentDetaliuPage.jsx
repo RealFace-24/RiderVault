@@ -33,7 +33,7 @@ export default function EchipamentDetaliuPage() {
     if (loading) {
         return (
             <p className="info" data-testid="loading">
-                Se încarcă...
+                Loading...
             </p>
         );
     }
@@ -42,9 +42,9 @@ export default function EchipamentDetaliuPage() {
         return (
             <section className="panel">
                 <p className="error" data-testid="error">
-                    Echipamentul nu a putut fi încărcat: {error}
+                    Could not load product: {error}
                 </p>
-                <Link to="/">Înapoi la listă</Link>
+                <Link to="/">Back to gear</Link>
             </section>
         );
     }
@@ -54,7 +54,7 @@ export default function EchipamentDetaliuPage() {
     return (
         <section className={`panel ${styles.detail}`} data-testid="detail">
             <Link to="/" className={styles.back}>
-                ← Înapoi la listă
+                ← Back to gear
             </Link>
 
             <h2
@@ -65,20 +65,20 @@ export default function EchipamentDetaliuPage() {
             </h2>
 
             <dl className={styles.fields}>
-                <dt>Stil de mers</dt>
+                <dt>Riding style</dt>
                 <dd>
                     <span className={`badge badge-${echipament.stil}`}>
                         {ETICHETE_STIL[echipament.stil] ?? echipament.stil}
                     </span>
                 </dd>
 
-                <dt>Cantitate disponibilă</dt>
-                <dd>{echipament.inStoc ? `${cantitate} buc.` : "0 buc. (stoc epuizat)"}</dd>
+                <dt>Available quantity</dt>
+                <dd>{echipament.inStoc ? `${cantitate} units` : "0 units (sold out)"}</dd>
 
-                <dt>Status</dt>
-                <dd>{echipament.inStoc ? "În stoc (Activ)" : "Indisponibil (Epuizat)"}</dd>
+                <dt>Availability</dt>
+                <dd>{echipament.inStoc ? "In stock" : "Sold out"}</dd>
 
-                <dt>ID produs</dt>
+                <dt>Product ID</dt>
                 <dd>{echipament.id}</dd>
             </dl>
         </section>
