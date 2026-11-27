@@ -1,4 +1,4 @@
-// Toate cererile HTTP stau aici; componentele nu apelează fetch direct.
+// All HTTP requests stay here; components do not call fetch directly.
 export const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
 
 async function request(path, options = {}) {
@@ -10,9 +10,16 @@ async function request(path, options = {}) {
         },
     });
     if (!res.ok) {
-        throw new Error(`Eroare server: ${res.status}`);
+        let message = `Server error: ${res.status}`;
+        try {
+            const body = await res.json();
+            if (body.error) message = body.error;
+        } catch {
+            // Keep the status-based fallback for non-JSON responses.
+        }
+        throw new Error(message);
     }
-    // 204 No Content nu are corp
+    // 204 No Content has no response body.
     return res.status === 204 ? null : res.json();
 }
 

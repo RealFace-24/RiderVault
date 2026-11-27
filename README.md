@@ -26,9 +26,21 @@ Details per stage: see the `ai-log/` folder.
 
 ## How to run
 
+**Terminal 1 — API**
+
+```bash
+cd backend
+npm ci
+# First run only: cp .env.example .env
+npm run dev
+```
+
+**Terminal 2 — frontend**
+
 ```bash
 cd frontend
-npm install
+npm ci
+# First run only: cp .env.example .env
 npm run dev
 ```
 
@@ -41,7 +53,8 @@ npm run dev
 - [x] Stage 6: data from a mock API
 - [x] Stage 7: form and validation
 - [x] Stage 8: routing and detail page
-- [ ] Stage 9: own backend with Express
+- [x] Stage 9: own backend with Express
+- [ ] Stage 10: MariaDB and full CRUD
 
 ---
 
@@ -185,6 +198,38 @@ Three pages behind React Router: the list, a detail page at `/echipamente/:id`, 
 | S8-R6 | data-testid attributes from tables 7.3 and 8.2; detail route /<resource>/:id | [Layout.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/Layout.jsx), [EchipamentCard.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/components/EchipamentCard.jsx), [EchipamentDetaliuPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/EchipamentDetaliuPage.jsx), [NotFoundPage.jsx](https://github.com/RealFace-24/RiderVault/blob/5224cda/frontend/src/pages/NotFoundPage.jsx) | querySelector in the console |
 | S8-R7 | README Stage 8 section + AI log                                        | [README.md](https://github.com/RealFace-24/RiderVault/blob/5224cda/README.md), [ai-log/etapa-08.md](https://github.com/RealFace-24/RiderVault/blob/02b335b/ai-log/etapa-08.md) | read |
 | S8-R8 | commit "Stage 8" pushed                                                | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/5224cda) | commit history |
+
+## Stage 9: own backend with Express
+The `json-server` mock API has been replaced by an Express API in `backend/`. It provides REST routes for equipment, validates data on the server, handles errors, and enables CORS for the frontend origin. Initial data is kept in memory in `backend/src/server.js` and resets when the server restarts; persistence is planned for Stage 10.
+
+**Terminal 1, `npm run dev` in `backend/`**
+```bash
+cd backend
+npm install
+cp .env.example .env
+npm run dev
+```
+API route: `http://localhost:3001/echipamente`
+
+**Terminal 2, `npm run dev` in `frontend/`**
+```bash
+cd frontend
+cp .env.example .env
+npm install
+npm run dev
+```
+
+## Stage 9 Checklist
+
+| ID    | Requirement                                             | Where to check | How to check |
+| :---- | :------------------------------------------------------ | :------------- | :----------- |
+| S9-R1 | Express backend starts on port 3001 and health returns 200 | `backend/package.json`, `backend/src/server.js`, `backend/src/app.js` | `cd backend && npm run dev`; open `/health` |
+| S9-R2 | GET, POST, PATCH and DELETE routes work                 | `backend/src/routes/echipamente.js` | use `curl` against `/echipamente` |
+| S9-R3 | Invalid product data returns 400 with an error message | `backend/src/validation.js` | POST an empty or invalid product |
+| S9-R4 | Stage 7 CRUD works with the own API                    | `frontend/src/api.js` | add, edit, toggle, remove and refresh |
+| S9-R5 | CORS allows the configured frontend origin             | `backend/src/app.js`, `backend/.env.example` | inspect browser console and response headers |
+
+See [ai-log/etapa-09.md](ai-log/etapa-09.md) for the implementation notes.
 
 
 
