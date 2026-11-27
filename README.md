@@ -221,15 +221,15 @@ npm run dev
 
 ## Stage 9 Checklist
 
-| ID    | Requirement                                             | Where to check | How to check |
-| :---- | :------------------------------------------------------ | :------------- | :----------- |
-| S9-R1 | Express backend starts on port 3001 and health returns 200 | `backend/package.json`, `backend/src/server.js`, `backend/src/app.js` | `cd backend && npm run dev`; open `/health` |
-| S9-R2 | GET, POST, PATCH and DELETE routes work                 | `backend/src/routes/echipamente.js` | use `curl` against `/echipamente` |
-| S9-R3 | Invalid product data returns 400 with an error message | `backend/src/validation.js` | POST an empty or invalid product |
-| S9-R4 | Stage 7 CRUD works with the own API                    | `frontend/src/api.js` | add, edit, toggle, remove and refresh |
-| S9-R5 | CORS allows the configured frontend origin             | `backend/src/app.js`, `backend/.env.example` | inspect browser console and response headers |
-
-See [ai-log/etapa-09.md](ai-log/etapa-09.md) for the implementation notes.
+| ID    | Requirement                                   | Where (permalink) | How to check |
+| :---- | :-------------------------------------------- | :---------------- | :----------- |
+| S9-R1 | npm run dev in backend/ starts the API on 3001 | [backend/package.json](https://github.com/RealFace-24/RiderVault/blob/8766e74/backend/package.json), [server.js](https://github.com/RealFace-24/RiderVault/blob/8766e74/backend/src/server.js) | run it, open /health |
+| S9-R2 | all five routes answer with the right codes   | [routes/echipamente.js#L7-L40](https://github.com/RealFace-24/RiderVault/blob/8766e74/backend/src/routes/echipamente.js#L7-L40) | curl commands from README |
+| S9-R3 | invalid data returns 400 with a clear message | [validation.js#L4-L42](https://github.com/RealFace-24/RiderVault/blob/8766e74/backend/src/validation.js#L4-L42) | POST with empty title |
+| S9-R4 | React app works with json-server removed      | [frontend/package.json](https://github.com/RealFace-24/RiderVault/blob/8766e74/frontend/package.json), [api.js#L12-L21](https://github.com/RealFace-24/RiderVault/blob/8766e74/frontend/src/api.js#L12-L21) | stop everything but backend |
+| S9-R5 | no CORS errors in the browser console         | [app.js#L7](https://github.com/RealFace-24/RiderVault/blob/8766e74/backend/src/app.js#L7) | open console |
+| S9-R6 | README Stage 9 section + AI log               | [README.md](https://github.com/RealFace-24/RiderVault/blob/8766e74/README.md), [ai-log/etapa-09.md](https://github.com/RealFace-24/RiderVault/blob/8766e74/ai-log/etapa-09.md) | read |
+| S9-R7 | commit "Stage 9" pushed                       | [link to the commit](https://github.com/RealFace-24/RiderVault/commit/8766e74) | commit history |
 
 
 
